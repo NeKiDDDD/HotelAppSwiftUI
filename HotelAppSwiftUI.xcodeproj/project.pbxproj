@@ -11,6 +11,11 @@
 		A0D5D0F72AA2366100939E19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D0F62AA2366100939E19 /* ContentView.swift */; };
 		A0D5D0F92AA2366300939E19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D5D0F82AA2366300939E19 /* Assets.xcassets */; };
 		A0D5D0FC2AA2366300939E19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D5D0FB2AA2366300939E19 /* Preview Assets.xcassets */; };
+		A0D5D1032AA2396600939E19 /* BackBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D1022AA2396600939E19 /* BackBlockView.swift */; };
+		A0D5D1052AA244ED00939E19 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D1042AA244ED00939E19 /* NetworkManager.swift */; };
+		A0D5D1072AA245C000939E19 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D1062AA245C000939E19 /* HotelModel.swift */; };
+		A0D5D1092AA3273100939E19 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D1082AA3273100939E19 /* CollectionViewCell.swift */; };
+		A0D5D10B2AA3380700939E19 /* FacilitiesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D10A2AA3380700939E19 /* FacilitiesButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		A0D5D0F62AA2366100939E19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A0D5D0F82AA2366300939E19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0D5D0FB2AA2366300939E19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A0D5D1022AA2396600939E19 /* BackBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackBlockView.swift; sourceTree = "<group>"; };
+		A0D5D1042AA244ED00939E19 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A0D5D1062AA245C000939E19 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
+		A0D5D1082AA3273100939E19 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		A0D5D10A2AA3380700939E19 /* FacilitiesButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilitiesButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,8 @@
 			children = (
 				A0D5D0F42AA2366100939E19 /* HotelAppSwiftUIApp.swift */,
 				A0D5D0F62AA2366100939E19 /* ContentView.swift */,
+				A0D5D1042AA244ED00939E19 /* NetworkManager.swift */,
+				A0D5D1062AA245C000939E19 /* HotelModel.swift */,
 				A0D5D0F82AA2366300939E19 /* Assets.xcassets */,
 				A0D5D0FA2AA2366300939E19 /* Preview Content */,
 			);
@@ -62,6 +74,9 @@
 		A0D5D0FA2AA2366300939E19 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				A0D5D1082AA3273100939E19 /* CollectionViewCell.swift */,
+				A0D5D1022AA2396600939E19 /* BackBlockView.swift */,
+				A0D5D10A2AA3380700939E19 /* FacilitiesButtons.swift */,
 				A0D5D0FB2AA2366300939E19 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -137,6 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0D5D1072AA245C000939E19 /* HotelModel.swift in Sources */,
+				A0D5D1052AA244ED00939E19 /* NetworkManager.swift in Sources */,
+				A0D5D10B2AA3380700939E19 /* FacilitiesButtons.swift in Sources */,
+				A0D5D1092AA3273100939E19 /* CollectionViewCell.swift in Sources */,
+				A0D5D1032AA2396600939E19 /* BackBlockView.swift in Sources */,
 				A0D5D0F72AA2366100939E19 /* ContentView.swift in Sources */,
 				A0D5D0F52AA2366100939E19 /* HotelAppSwiftUIApp.swift in Sources */,
 			);
