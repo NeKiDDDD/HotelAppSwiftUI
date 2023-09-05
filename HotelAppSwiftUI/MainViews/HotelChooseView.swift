@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HotelChooseView: View {
     
     @ObservedObject  var networking = NetworkManager()
     @State var index = 0
@@ -34,32 +34,35 @@ struct ContentView: View {
                         }.offset(x: -12)
                     }.padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
                     Section {
-                        Text("Об отеле")
+                        Text(K.HotelChooseView.aboutHotel)
                             .lineLimit(0)
                             .bold()
                             .font(.system(size: 25))
                             .offset(x: -120)
                             .padding()
-                        PeculiaritiesView(peculiarities: networking.hotelData?.about_the_hotel?.peculiarities ?? [""])
-                            .padding()
+                        PeculiaritiesView(peculiarities: networking.hotelData?.about_the_hotel?.peculiarities ?? [""]).padding()
                         Text(networking.hotelData?.about_the_hotel?.description ?? "")
                             .multilineTextAlignment(.leading)
+                            .padding()
                         FacilitiesButtons()
                             .padding()
                     }
                     Section {
-                        BasicBlueButton(buttonText: "К выбору номера")
+                        VStack {
+                            NavigationBlueButton(buttonText: K.HotelChooseView.buttonChoose, destination: RoomNumberView(hotelName: networking.hotelData?.name ?? ""))
+                                
+                        }
                     }
                 }
                 
             }
-            .navigationTitle("Отель")
+            .navigationTitle(K.HotelChooseView.hotel)
             .navigationBarTitleDisplayMode(.inline)
             .font(.headline)
             
         }.preferredColorScheme(.light)
             .onAppear {
-                networking.fetch()
+                networking.fetch(url: networking.urls[0])
                 
             }
     }
@@ -67,6 +70,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HotelChooseView()
     }
 }

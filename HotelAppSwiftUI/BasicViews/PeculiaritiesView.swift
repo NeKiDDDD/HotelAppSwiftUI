@@ -13,11 +13,11 @@ struct PeculiaritiesView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.flexible(), spacing: 2), GridItem(.flexible(), spacing: 2)], spacing: 2) {
+            LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10)  {
                         ForEach(peculiarities ?? [""], id: \.self) { peculiarities in
                             CollectionViewCell(infoDataCell: peculiarities ?? "")
                                 
-                        }.dynamicTypeSize(.xSmall)
+                        }
             }
         }
     }

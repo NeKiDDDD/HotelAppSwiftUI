@@ -11,7 +11,7 @@ import SwiftUI
 struct HotelAppSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HotelChooseView()
         }
     }
 }

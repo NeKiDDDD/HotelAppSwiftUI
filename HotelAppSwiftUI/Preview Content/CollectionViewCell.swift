@@ -18,7 +18,6 @@ struct CollectionViewCell: View {
                             .background(/*@START_MENU_TOKEN@*/Color(red: 0.984, green: 0.984, blue: 0.989)/*@END_MENU_TOKEN@*/)
                             .cornerRadius(10)
                             .font(.system(size: 12))
-//                            .frame(maxWidth: .infinity)
                             .foregroundColor(.gray)
         }
     }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PictureCarouselView: View {
+    
     let imageUrls: [URL?] 
 
     var body: some View {

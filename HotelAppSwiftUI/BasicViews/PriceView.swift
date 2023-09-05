@@ -17,7 +17,7 @@ struct PriceView: View {
             if let minimalPrice = minimalPrice {
                 Text("от \(minimalPrice) Р")
                     .bold()
-                    .font(.system(size: 25))
+                    .font(.system(size: 18))
             } else {
                 Text("от ??? Р")
             }
@@ -25,6 +25,7 @@ struct PriceView: View {
             if let priceForIt = priceForIt {
                 Text(priceForIt)
                     .foregroundColor(.gray)
+                    .font(.system(size: 13))
                     .baselineOffset(-4)
             } else {
                 Text("")
