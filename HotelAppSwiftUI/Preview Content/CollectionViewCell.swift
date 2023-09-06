@@ -14,11 +14,12 @@ struct CollectionViewCell: View {
     var body: some View {
         ZStack {
             Text(infoDataCell)
-                            .padding()
+                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
                             .background(/*@START_MENU_TOKEN@*/Color(red: 0.984, green: 0.984, blue: 0.989)/*@END_MENU_TOKEN@*/)
                             .cornerRadius(10)
                             .font(.system(size: 12))
                             .foregroundColor(.gray)
+
         }
     }
 }

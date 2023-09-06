@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CompletedView: View {
+    
+    @EnvironmentObject var coordinator: Coordinator
+    
     var body: some View {
         VStack {
             Spacer()
@@ -23,14 +26,31 @@ struct CompletedView: View {
             Section {
                 Spacer()
                 Divider()
-                NavigationBlueButton(buttonText: K.CompletedView.buttonName, destination: HotelChooseView())
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        coordinator.goHome()
+                    }) {
+                        Text(K.CompletedView.buttonName)
+                                .foregroundColor(.white)
+                                .padding()
+                    }.contentShape(Rectangle())
+                    Spacer()
+                }.background(Color.blue)
+                    .cornerRadius(20)
+                    .padding()
+
             }
         }
     }
 }
 
 struct ComletedView_Previews: PreviewProvider {
+    @State static var coordinator = Coordinator()
     static var previews: some View {
-        CompletedView()
+        NavigationStack {
+            CompletedView()
+                .environmentObject(coordinator)
+        }
     }
 }

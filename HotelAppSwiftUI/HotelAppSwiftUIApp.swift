@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct HotelAppSwiftUIApp: App {
+    
+    @StateObject var coordinator = Coordinator()
+    
     var body: some Scene {
         WindowGroup {
-            HotelChooseView()
+            MainPage()
+                .environmentObject(coordinator)
         }
     }
 }

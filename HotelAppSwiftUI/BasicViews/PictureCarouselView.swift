@@ -34,7 +34,7 @@ struct PictureCarouselView: View {
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         .frame(height: 200)
-        .padding()
+//        .padding()
     }
 }
 

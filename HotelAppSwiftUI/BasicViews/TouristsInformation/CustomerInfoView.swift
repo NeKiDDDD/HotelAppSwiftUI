@@ -10,11 +10,11 @@ import SwiftUI
 struct CustomerInfoView: View {
     var body: some View {
         VStack {
-            ClientInfoView(textData: "Номер телефона", textField: "")
-            ClientInfoView(textData: "Почта", textField: "")
+            ClientInfoView(textData: K.BookingView.Tourist.phoneNumber, textField: "")
+            ClientInfoView(textData: K.BookingView.Tourist.mail, textField: "")
             Text(K.BookingView.disclamer).foregroundColor(.gray)
                 .font(.system(size: 14))
-                .padding()
+                .padding(EdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5))
         }.padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
     }
 }

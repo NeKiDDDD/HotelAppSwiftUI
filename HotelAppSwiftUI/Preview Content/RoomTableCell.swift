@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoomTableCell<Destination: View>: View {
+struct RoomTableCell: View {
     
     let imageUrls: [URL?]
     let numberName: String?
@@ -15,7 +15,8 @@ struct RoomTableCell<Destination: View>: View {
     let minimalPrice: Int?
     let priceForIt: String?
     let buttonText: String
-    let destination: Destination
+    @EnvironmentObject var coordinator: Coordinator
+
     
     var body: some View {
         ZStack {
@@ -35,8 +36,11 @@ struct RoomTableCell<Destination: View>: View {
                             PeculiaritiesView(peculiarities: peculiarities)
                         }
                         VStack (alignment: .leading ) {
-                            DetailButton()
-                        }.offset(x: -90)
+                            HStack {
+                                DetailButton()
+                                Spacer()
+                            }.padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                        }
                         VStack {
                             PriceView(minimalPrice: minimalPrice, priceForIt: priceForIt)
                         }
@@ -45,9 +49,19 @@ struct RoomTableCell<Destination: View>: View {
                     }
                 }
                 Section {
-                    VStack {
-                        NavigationBlueButton(buttonText: buttonText, destination: destination)
-                    }
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            coordinator.goBook()
+                        }) {
+                            Text(K.RoomNumberView.buttonChoose)
+                                    .foregroundColor(.white)
+                                    .padding()
+                        }.contentShape(Rectangle())
+                        Spacer()
+                    }.background(Color.blue)
+                        .cornerRadius(20)
+                        .padding()
                 }
             }
             
@@ -57,7 +71,8 @@ struct RoomTableCell<Destination: View>: View {
 }
 
 struct RoomTableView_Previews: PreviewProvider {
+    @State static var coordinator = Coordinator()
     static var previews: some View {
-        RoomTableCell(imageUrls: [/*URL*/], numberName: "nomer", peculiarities: ["odin","dva"], minimalPrice: 122_233, priceForIt: "za to chto", buttonText: "Выбрать номер",destination: RoomNumberView())
+        RoomTableCell(imageUrls: [/*URL*/], numberName: "nomer", peculiarities: ["odin","dva"], minimalPrice: 122_233, priceForIt: "za to chto", buttonText: "Выбрать номер").environmentObject(coordinator)
     }
 }

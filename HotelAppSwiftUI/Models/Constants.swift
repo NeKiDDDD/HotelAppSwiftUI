@@ -40,6 +40,8 @@ struct K {
         }
         
         struct Tourist {
+            static let phoneNumber = "Номер телефона"
+            static let mail = "Почта"
             static let Tourist = "Турист #"
             static let name = "Имя"
             static let surName = "Фамилия"
@@ -47,6 +49,8 @@ struct K {
             static let citizenship = "Гражданство"
             static let passportNumber = "Номер загранпаспорта"
             static let expiredDate = "Срок действия загранпаспорта"
+            static var touristCount = ["Первый турист","Второй турист"]
+            static var touristBool = [true, false]
         }
     }
         

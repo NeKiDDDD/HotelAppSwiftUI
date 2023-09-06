@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-struct NavigationBlueButton<Destination: View>: View {
+struct NavigationBlueButton: View {
+    
+    @EnvironmentObject var coordinator: Coordinator
     let buttonText: String
-    let destination: Destination
     
     var body: some View {
-        NavigationLink(destination: destination) {
             HStack {
                 Spacer()
                 Button(action: {
+                    coordinator.goHome()
                 }) {
                         Text(buttonText)
                             .foregroundColor(.white)
@@ -25,12 +26,15 @@ struct NavigationBlueButton<Destination: View>: View {
             }.background(Color.blue)
                 .cornerRadius(20)
                 .padding()
-        }
     }
 }
 
 struct BasicBlueButton_Previews: PreviewProvider {
+    @State static var coordiantor = Coordinator()
     static var previews: some View {
-        NavigationBlueButton(buttonText: "Test", destination: RoomNumberView())
+        NavigationStack {
+            NavigationBlueButton(buttonText: "Test")
+                .environmentObject(coordiantor)
+        }
     }
 }

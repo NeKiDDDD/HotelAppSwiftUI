@@ -15,15 +15,17 @@ struct HotelNameView: View {
         VStack {
             if let hotelName = hotelName {
                 Text("\(hotelName)")
+                    .multilineTextAlignment(.center)
                     .bold()
                     .font(.system(size: 20))
-                    .offset(x: -12)
+
             } else {
                 Text("???")
             }
             Button("Madinat Makadi, Safaga Road, Makadi Bay, Египет") {
                 
             }
+            .multilineTextAlignment(.center)
             .lineLimit(1)
             .font(.system(size: 15))
             

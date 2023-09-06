@@ -27,7 +27,8 @@ struct ClientInfoView: View {
                 TextField(textField, text: $name)
                     .foregroundColor(.black)
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 0))
-            }.background(Color.yellow)
+            }
+            .background(/*@START_MENU_TOKEN@*/Color(red: 0.984, green: 0.984, blue: 0.989)/*@END_MENU_TOKEN@*/)
             .frame(alignment: .leading)
             .cornerRadius(15)
         }

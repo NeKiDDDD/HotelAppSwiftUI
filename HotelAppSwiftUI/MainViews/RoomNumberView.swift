@@ -10,18 +10,18 @@ struct RoomNumberView: View {
     
     @ObservedObject var networking = NetworkManager2()
     var hotelName: String = K.RoomNumberView.hotelName
-
+    @EnvironmentObject var coordinator: Coordinator
+    
     var body: some View {
         List {
             if let rooms = networking.roomData?.rooms {
                 ForEach(rooms, id: \.id) { room in
-                        RoomTableCell(imageUrls: room.image_urls,
-                                      numberName: room.name,
-                                      peculiarities: room.peculiarities,
-                                      minimalPrice: room.price,
-                                      priceForIt: room.price_per,
-                                      buttonText: K.RoomNumberView.buttonChoose,
-                                      destination: BookingView())
+                    RoomTableCell(imageUrls: room.image_urls,
+                                  numberName: room.name,
+                                  peculiarities: room.peculiarities,
+                                  minimalPrice: room.price,
+                                  priceForIt: room.price_per,
+                                  buttonText: K.RoomNumberView.buttonChoose)
                 }.listRowBackground(/*@START_MENU_TOKEN@*/Color(red: 0.984, green: 0.984, blue: 0.989)/*@END_MENU_TOKEN@*/)
                     .listRowSeparator(.hidden)
             } else {
@@ -29,7 +29,7 @@ struct RoomNumberView: View {
             }
         }
         .listStyle(.inset)
-            .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+        .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -45,8 +45,12 @@ struct RoomNumberView: View {
 }
 
 struct RoomNumberView_Previews: PreviewProvider {
+    @State static var coordinator = Coordinator()
     static var previews: some View {
-        RoomNumberView(hotelName: K.RoomNumberView.hotelName)
+        NavigationStack {
+            RoomNumberView(hotelName: K.RoomNumberView.hotelName)
+                .environmentObject(coordinator)
+        }
     }
 }
 

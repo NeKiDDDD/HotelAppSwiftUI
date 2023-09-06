@@ -18,12 +18,13 @@ struct DetailButton: View {
 //                    .frame(width: 200, alignment: .leading)
                 Image(systemName: "arrow.right")
             }.foregroundColor(.blue)
-                .padding()
+                .frame(alignment: .leading)
+                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
             
             
         }
         .background(/*@START_MENU_TOKEN@*/Color(red: 0.906, green: 0.946, blue: 1.001)/*@END_MENU_TOKEN@*/)
-        .cornerRadius(10)
+        .cornerRadius(5)
     }
 }
 
