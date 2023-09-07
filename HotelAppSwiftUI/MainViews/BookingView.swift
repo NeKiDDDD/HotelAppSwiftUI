@@ -30,9 +30,13 @@ struct BookingView: View {
                 }.background(Color.white)
                     .cornerRadius(20)
                 Section {
-                    CustomerInfoView()
-                }.background(Color.white)
-                    .cornerRadius(20)
+                    EmailTextFieldView(prevText: "example@mail.com")
+                        .background(Color.white)
+                            .cornerRadius(20)
+                    Text(K.BookingView.disclamer).foregroundColor(.gray)
+                        .font(.system(size: 14))
+                        .padding(EdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5))
+                }
                 Section {
                     
                     VStack {

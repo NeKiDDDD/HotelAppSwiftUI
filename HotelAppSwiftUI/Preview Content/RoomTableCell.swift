@@ -38,6 +38,7 @@ struct RoomTableCell: View {
                         VStack (alignment: .leading ) {
                             HStack {
                                 DetailButton()
+                                    .padding()
                                 Spacer()
                             }.padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
                         }

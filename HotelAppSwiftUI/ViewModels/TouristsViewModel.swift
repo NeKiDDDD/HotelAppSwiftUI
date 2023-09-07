@@ -9,7 +9,7 @@ import Foundation
 
 class TouristsViewModel: ObservableObject {
     
-    @Published var numberOfTourists: Int = 2
+    @Published var numberOfTourists: Int = 1
     @Published var isExpanded: [Bool] = []
     
     init() {

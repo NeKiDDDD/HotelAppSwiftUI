@@ -12,6 +12,7 @@
 		A046D5AE2AA8037800E6764C /* SimpleTouristsDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046D5AD2AA8037800E6764C /* SimpleTouristsDataView.swift */; };
 		A046D5B02AA8177000E6764C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046D5AF2AA8177000E6764C /* Coordinator.swift */; };
 		A046D5B22AA81EE500E6764C /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046D5B12AA81EE500E6764C /* MainPage.swift */; };
+		A05442F92AA9457D002F6FC2 /* EmailTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05442F82AA9457D002F6FC2 /* EmailTextFieldView.swift */; };
 		A0D5D0F52AA2366100939E19 /* HotelAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D0F42AA2366100939E19 /* HotelAppSwiftUIApp.swift */; };
 		A0D5D0F72AA2366100939E19 /* HotelChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D0F62AA2366100939E19 /* HotelChooseView.swift */; };
 		A0D5D0F92AA2366300939E19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D5D0F82AA2366300939E19 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		A046D5AD2AA8037800E6764C /* SimpleTouristsDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTouristsDataView.swift; sourceTree = "<group>"; };
 		A046D5AF2AA8177000E6764C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A046D5B12AA81EE500E6764C /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		A05442F82AA9457D002F6FC2 /* EmailTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldView.swift; sourceTree = "<group>"; };
 		A0D5D0F12AA2366100939E19 /* HotelAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D5D0F42AA2366100939E19 /* HotelAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		A0D5D0F62AA2366100939E19 /* HotelChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelChooseView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 				A046D5AF2AA8177000E6764C /* Coordinator.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A05442F72AA9454E002F6FC2 /* MasksAndValidationFields */ = {
+			isa = PBXGroup;
+			children = (
+				A05442F82AA9457D002F6FC2 /* EmailTextFieldView.swift */,
+			);
+			path = MasksAndValidationFields;
 			sourceTree = "<group>";
 		};
 		A0D5D0E82AA2366100939E19 = {
@@ -215,6 +225,7 @@
 		A0D5D13D2AA77E2B00939E19 /* TouristsInformation */ = {
 			isa = PBXGroup;
 			children = (
+				A05442F72AA9454E002F6FC2 /* MasksAndValidationFields */,
 				A0D5D1282AA6409800939E19 /* ClientInfoView.swift */,
 				A0D5D1322AA7577900939E19 /* CustomerInfoView.swift */,
 				A0D5D13E2AA77E5600939E19 /* TouristEnterDataView.swift */,
@@ -327,6 +338,7 @@
 				A0D5D1222AA41AAE00939E19 /* BookingView.swift in Sources */,
 				A0D5D1352AA7583F00939E19 /* PriceDataView.swift in Sources */,
 				A0D5D1252AA6369200939E19 /* BookingModel.swift in Sources */,
+				A05442F92AA9457D002F6FC2 /* EmailTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
