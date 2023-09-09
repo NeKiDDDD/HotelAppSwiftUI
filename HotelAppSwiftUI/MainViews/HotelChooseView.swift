@@ -82,7 +82,7 @@ struct HotelChooseView: View {
         }.background((/*@START_MENU_TOKEN@*/Color(red: 0.984, green: 0.984, blue: 0.989)/*@END_MENU_TOKEN@*/))
                         .preferredColorScheme(.light)
             .onAppear {
-                networking.fetch(url: networking.urls[0])
+                networking.fetchHotelData(url: networking.urls[0])
             }
     }
 }

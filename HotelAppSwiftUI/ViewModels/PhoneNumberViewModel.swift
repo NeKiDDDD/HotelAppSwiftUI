@@ -10,7 +10,6 @@ import SwiftUI
 class PhoneNumberViewModel: ObservableObject {
     
     @Published var phoneNumber: String = ""
-    @Published var phoneNumberError: String? = nil
     @Published var isTextFieldActive: Bool = false
     @Published var isEditing: Bool = false
     

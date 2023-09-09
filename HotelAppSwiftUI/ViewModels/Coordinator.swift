@@ -15,22 +15,18 @@ final class Coordinator: ObservableObject {
     
     func goHome () {
         path.removeLast(path.count)
-        print("работает")
     }
     
     func goRoom () {
         path.append(MyPage.room)
-        print("работает")
     }
     
     func goBook () {
         path.append(MyPage.book)
-        print("работает")
     }
     
     func goFinal () {
         path.append(MyPage.final)
-        print("работает")
     }
     
     @ViewBuilder

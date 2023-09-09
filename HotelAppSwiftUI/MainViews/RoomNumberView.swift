@@ -8,7 +8,7 @@ import SwiftUI
 
 struct RoomNumberView: View {
     
-    @ObservedObject var networking = NetworkManager2()
+    @ObservedObject var networking = NetworkManager()
     var hotelName: String = K.RoomNumberView.hotelName
     @EnvironmentObject var coordinator: Coordinator
     
@@ -39,7 +39,7 @@ struct RoomNumberView: View {
             }
         }
         .onAppear {
-            networking.fetch(url: networking.urls[1])
+            networking.fetchRoomsData(url: networking.urls[1])
         }
     }
 }

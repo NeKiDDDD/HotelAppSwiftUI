@@ -48,10 +48,8 @@ class CheckDataModel: ObservableObject {
             !isCitizenshipValid() ||
             !isPassportValid() ||
             !isExpireDateValid() {
-            print("net")
             return false
         } else {
-            print("da")
             return true
         }
     }

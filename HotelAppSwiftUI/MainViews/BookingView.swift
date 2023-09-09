@@ -12,7 +12,7 @@ struct BookingView: View {
     @State private var showAlert = false
     @State private var isPhoneNumberFilled = false
     @State private var isEmailFilled = false
-    @ObservedObject  var networking = NetworkManager3()
+    @ObservedObject  var networking = NetworkManager()
     @ObservedObject private var checkDataModel = CheckDataModel()
     @ObservedObject private var touristViewModel = TouristsViewModel()
     @EnvironmentObject var coordinator: Coordinator
@@ -84,7 +84,7 @@ struct BookingView: View {
                                     title: Text("Недостающие данные"),
                                     message: Text("Пожалуйста, заполните все необходимые поля перед продолжением."),
                                     dismissButton: .default(Text("OK"), action: {
-                                        networking.fetch(url: networking.urls[2])
+                                        networking.fetchBookingData(url: networking.urls[2])
                                     })
                                 )
                             }
@@ -99,7 +99,7 @@ struct BookingView: View {
             }.navigationTitle(K.BookingView.screenName)
                 .background((/*@START_MENU_TOKEN@*/Color(red: 0.984, green: 0.984, blue: 0.989)/*@END_MENU_TOKEN@*/))
                 .onAppear {
-                    networking.fetch(url: networking.urls[2])
+                    networking.fetchBookingData(url: networking.urls[2])
                 }
         }
     }
