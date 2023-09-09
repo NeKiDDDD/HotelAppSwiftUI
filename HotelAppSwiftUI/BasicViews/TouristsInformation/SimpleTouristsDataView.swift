@@ -12,6 +12,7 @@ struct SimpleTouristsDataView: View {
     let touristNumber: Int
     @Binding var isExpanded: Bool
     let toggleExpansion: (Int) -> Void
+    let checkDataModel: CheckDataModel?
     
     var body: some View {
         VStack {
@@ -38,7 +39,7 @@ struct SimpleTouristsDataView: View {
             
             if isExpanded {
                 HStack {
-                    TouristEnterDataView()
+                    TouristDataView(checkDataModel: checkDataModel ?? CheckDataModel())
                 }
             }
         }.padding()

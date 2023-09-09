@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct BookingView: View {
-    
+
+    @State private var showAlert = false
+    @State private var isPhoneNumberFilled = false
+    @State private var isEmailFilled = false
     @ObservedObject  var networking = NetworkManager3()
-    @StateObject private var viewModel = TouristsViewModel()
+    @ObservedObject private var checkDataModel = CheckDataModel()
+    @ObservedObject private var touristViewModel = TouristsViewModel()
     @EnvironmentObject var coordinator: Coordinator
     
     var body: some View {
@@ -30,7 +34,8 @@ struct BookingView: View {
                 }.background(Color.white)
                     .cornerRadius(20)
                 Section {
-                    EmailTextFieldView(prevText: "example@mail.com")
+                    NumberTextFieldView(isPhoneNumberFilled: $isPhoneNumberFilled, example: "+7 (XXX) XXX-XX-XX")
+                    EmailTextFieldView(isEmailFilled: $isEmailFilled, prevText: "example@mail.com")
                         .background(Color.white)
                             .cornerRadius(20)
                     Text(K.BookingView.disclamer).foregroundColor(.gray)
@@ -40,14 +45,14 @@ struct BookingView: View {
                 Section {
                     
                     VStack {
-                        ForEach(0..<viewModel.numberOfTourists, id: \.self) { index in
-                            SimpleTouristsDataView(touristNumber: index + 1, isExpanded: $viewModel.isExpanded[index], toggleExpansion: viewModel.toggleExpansion)
+                        ForEach(0..<touristViewModel.numberOfTourists, id: \.self) { index in
+                            SimpleTouristsDataView(touristNumber: index + 1, isExpanded: $touristViewModel.isExpanded[index], toggleExpansion: touristViewModel.toggleExpansion, checkDataModel: checkDataModel)
                         }
                                 .background(Color.white)
                             .cornerRadius(20)
                     }
                     HStack {
-                        TouristAddView(viewModel: viewModel)
+                        TouristAddView(viewModel: touristViewModel)
                                 .background(Color.white)
                             .cornerRadius(20)
                     }
@@ -61,14 +66,32 @@ struct BookingView: View {
                     HStack {
                         Spacer()
                         Button(action: {
-                            coordinator.goFinal()
-                        }) {
+                            if isPhoneNumberFilled && isEmailFilled && checkDataModel.isSignUpComplete {
+                                    coordinator.goFinal()
+                                } else {
+                                    showAlert = true
+                                    print(isEmailFilled)
+                                    print(checkDataModel.isSignUpComplete)
+                                }
+                        })
+                        {
                             Text(("Оплатить " + String(networking.bookingData?.finalPrice ?? "")))
                                     .foregroundColor(.white)
                                     .padding()
                         }.contentShape(Rectangle())
+                            .alert(isPresented: $showAlert) {
+                                Alert(
+                                    title: Text("Недостающие данные"),
+                                    message: Text("Пожалуйста, заполните все необходимые поля перед продолжением."),
+                                    dismissButton: .default(Text("OK"), action: {
+                                        networking.fetch(url: networking.urls[2])
+                                    })
+                                )
+                            }
+
                         Spacer()
-                    }.background(Color.blue)
+                    }
+                    .background(Color.blue)
                         .cornerRadius(20)
                         .padding()
                 }.background(Color.white)

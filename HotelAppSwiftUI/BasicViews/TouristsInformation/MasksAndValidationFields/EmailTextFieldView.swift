@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EmailTextFieldView: View {
     
+    @Binding var isEmailFilled: Bool
     @State private var email = ""
     @State private var isEmailValid = true
     let prevText: String
@@ -38,6 +39,7 @@ struct EmailTextFieldView: View {
                     let emailPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
                     let isValid = NSPredicate(format: "SELF MATCHES %@", emailPattern).evaluate(with: email)
                     isEmailValid = isValid
+                    isEmailFilled = !newValue.isEmpty
                 }
             }
         }.background(/*@START_MENU_TOKEN@*/Color(red: 0.984, green: 0.984, blue: 0.989)/*@END_MENU_TOKEN@*/)
@@ -47,8 +49,8 @@ struct EmailTextFieldView: View {
     }
 }
 
-struct EmailTextFieldView_Previews: PreviewProvider {
-    static var previews: some View {
-        EmailTextFieldView(prevText: "Email")
-    }
-}
+//struct EmailTextFieldView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EmailTextFieldView(isEmailFilled: <#Binding<Bool>#>, prevText: "Email")
+//    }
+//}

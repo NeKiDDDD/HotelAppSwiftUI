@@ -37,55 +37,55 @@ struct HotelChooseView: View {
                         }
                         
                     }
-                    }.background(Color.white)
-                        .cornerRadius(20)
-                    
-                    Section {
-                        VStack {
-                            HStack {
-                                Text(K.HotelChooseView.aboutHotel)
-                                    .lineLimit(0)
-                                    .bold()
-                                    .font(.system(size: 25))
-                            Spacer()
-                            }
-                            .padding()
-                            HStack {
-                                PeculiaritiesView(peculiarities: networking.hotelData?.about_the_hotel?.peculiarities ?? [""]).padding()
-                            }
-                            HStack {
-                                Text(networking.hotelData?.about_the_hotel?.description ?? "")
-                                    .multilineTextAlignment(.leading)
-                            }.padding()
-                            HStack {
-                                FacilitiesButtons()
-                            }.padding()
-                        }
-                    }.background(Color.white)
+                }.background(Color.white)
                     .cornerRadius(20)
-                    Section {
+                
+                Section {
+                    VStack {
                         HStack {
+                            Text(K.HotelChooseView.aboutHotel)
+                                .lineLimit(0)
+                                .bold()
+                                .font(.system(size: 25))
                             Spacer()
-                            Button(action: {
-                                coordinator.goRoom()
-                            }) {
-                                Text(K.HotelChooseView.buttonChoose)
-                                    .foregroundColor(.white)
-                                    .padding()
-                            }.contentShape(Rectangle())
-                            Spacer()
-                        }.background(Color.blue)
-                            .cornerRadius(20)
-                            .padding()
+                        }
+                        .padding()
+                        HStack {
+                            PeculiaritiesView(peculiarities: networking.hotelData?.about_the_hotel?.peculiarities ?? [""]).padding()
+                        }
+                        HStack {
+                            Text(networking.hotelData?.about_the_hotel?.description ?? "")
+                                .multilineTextAlignment(.leading)
+                        }.padding()
+                        HStack {
+                            FacilitiesButtons()
+                        }.padding()
                     }
+                }.background(Color.white)
+                    .cornerRadius(20)
+                Section {
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            coordinator.goRoom()
+                        }) {
+                            Text(K.HotelChooseView.buttonChoose)
+                                .foregroundColor(.white)
+                                .padding()
+                        }.contentShape(Rectangle())
+                        Spacer()
+                    }.background(Color.blue)
+                        .cornerRadius(20)
+                        .padding()
                 }
+            }
         }.background((/*@START_MENU_TOKEN@*/Color(red: 0.984, green: 0.984, blue: 0.989)/*@END_MENU_TOKEN@*/))
-//                .preferredColorScheme(.light)
-                .onAppear {
-                    networking.fetch(url: networking.urls[0])
-                }
-        }
+                        .preferredColorScheme(.light)
+            .onAppear {
+                networking.fetch(url: networking.urls[0])
+            }
     }
+}
 
 
 
