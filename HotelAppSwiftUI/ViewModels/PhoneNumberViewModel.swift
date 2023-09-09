@@ -14,6 +14,6 @@ class PhoneNumberViewModel: ObservableObject {
     @Published var isEditing: Bool = false
     
     func isValidPhoneNumber() -> Bool {
-            return phoneNumber.count == 18
-        }
+        return phoneNumber.count == 18
+    }
 }

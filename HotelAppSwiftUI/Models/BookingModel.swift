@@ -34,21 +34,21 @@ struct Booking: Codable, Identifiable {
     
     var tourPriceString: String {
         let numberFormatter = NumberFormatter()
-                numberFormatter.numberStyle = .decimal
+        numberFormatter.numberStyle = .decimal
         let stringInt = numberFormatter.string(from: NSNumber(value: tour_price)) ?? ""
         return stringInt + " P"
     }
     
     var fuelChargeString: String {
         let numberFormatter = NumberFormatter()
-                numberFormatter.numberStyle = .decimal
+        numberFormatter.numberStyle = .decimal
         let stringInt = numberFormatter.string(from: NSNumber(value: fuel_charge)) ?? ""
         return stringInt + " P"
     }
     
     var serviceChargeString: String {
         let numberFormatter = NumberFormatter()
-                numberFormatter.numberStyle = .decimal
+        numberFormatter.numberStyle = .decimal
         let stringInt = numberFormatter.string(from: NSNumber(value: service_charge)) ?? ""
         return stringInt + " P"
     }
@@ -56,8 +56,8 @@ struct Booking: Codable, Identifiable {
     var finalPrice: String {
         let variableInt = tour_price + fuel_charge + service_charge
         let numberFormatter = NumberFormatter()
-                numberFormatter.numberStyle = .decimal
+        numberFormatter.numberStyle = .decimal
         let stringInt = numberFormatter.string(from: NSNumber(value: variableInt)) ?? ""
-       return stringInt + " P"
+        return stringInt + " P"
     }
 }

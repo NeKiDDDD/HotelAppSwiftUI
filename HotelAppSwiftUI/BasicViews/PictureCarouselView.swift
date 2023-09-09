@@ -10,7 +10,7 @@ import SwiftUI
 struct PictureCarouselView: View {
     
     let imageUrls: [URL?] 
-
+    
     var body: some View {
         TabView {
             ForEach(imageUrls, id: \.self) { imageUrl in
@@ -34,7 +34,6 @@ struct PictureCarouselView: View {
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         .frame(height: 200)
-//        .padding()
     }
 }
 

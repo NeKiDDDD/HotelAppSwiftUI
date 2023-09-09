@@ -38,7 +38,6 @@
 		A0D5D1222AA41AAE00939E19 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D1212AA41AAE00939E19 /* BookingView.swift */; };
 		A0D5D1252AA6369200939E19 /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D1242AA6369200939E19 /* BookingModel.swift */; };
 		A0D5D1272AA6388F00939E19 /* BookingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D1262AA6388F00939E19 /* BookingDataView.swift */; };
-		A0D5D1292AA6409800939E19 /* ClientInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D1282AA6409800939E19 /* ClientInfoView.swift */; };
 		A0D5D12D2AA74A7000939E19 /* DetailedFlightData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D12C2AA74A7000939E19 /* DetailedFlightData.swift */; };
 		A0D5D12F2AA74DA600939E19 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D12E2AA74DA600939E19 /* Constants.swift */; };
 		A0D5D1312AA756AB00939E19 /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5D1302AA756AB00939E19 /* CompletedView.swift */; };
@@ -80,7 +79,6 @@
 		A0D5D1212AA41AAE00939E19 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		A0D5D1242AA6369200939E19 /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
 		A0D5D1262AA6388F00939E19 /* BookingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDataView.swift; sourceTree = "<group>"; };
-		A0D5D1282AA6409800939E19 /* ClientInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInfoView.swift; sourceTree = "<group>"; };
 		A0D5D12C2AA74A7000939E19 /* DetailedFlightData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedFlightData.swift; sourceTree = "<group>"; };
 		A0D5D12E2AA74DA600939E19 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A0D5D1302AA756AB00939E19 /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
@@ -120,6 +118,15 @@
 			path = MasksAndValidationFields;
 			sourceTree = "<group>";
 		};
+		A054430C2AAD2683002F6FC2 /* CellViews */ = {
+			isa = PBXGroup;
+			children = (
+				A0D5D11D2AA40B7F00939E19 /* RoomTableCell.swift */,
+				A0D5D1082AA3273100939E19 /* CollectionViewCell.swift */,
+			);
+			path = CellViews;
+			sourceTree = "<group>";
+		};
 		A0D5D0E82AA2366100939E19 = {
 			isa = PBXGroup;
 			children = (
@@ -155,8 +162,6 @@
 		A0D5D0FA2AA2366300939E19 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				A0D5D11D2AA40B7F00939E19 /* RoomTableCell.swift */,
-				A0D5D1082AA3273100939E19 /* CollectionViewCell.swift */,
 				A0D5D0FB2AA2366300939E19 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -174,12 +179,13 @@
 		A0D5D10F2AA3A88400939E19 /* BasicViews */ = {
 			isa = PBXGroup;
 			children = (
+				A054430C2AAD2683002F6FC2 /* CellViews */,
+				A0D5D1362AA758D400939E19 /* FlightDataViews */,
 				A0D5D1022AA2396600939E19 /* PictureCarouselView.swift */,
 				A0D5D10C2AA3A4F500939E19 /* StarView.swift */,
 				A0D5D1112AA3A98600939E19 /* PriceView.swift */,
 				A0D5D1132AA3ABFA00939E19 /* HotelNameView.swift */,
 				A0D5D1152AA3AD1200939E19 /* PeculiaritiesView.swift */,
-				A0D5D1362AA758D400939E19 /* FlightDataViews */,
 				A0D5D13D2AA77E2B00939E19 /* TouristsInformation */,
 				A0D5D1372AA7591700939E19 /* PriceDataViews */,
 				A0D5D1402AA7875D00939E19 /* CompletedViewPicture.swift */,
@@ -232,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				A05442F72AA9454E002F6FC2 /* MasksAndValidationFields */,
-				A0D5D1282AA6409800939E19 /* ClientInfoView.swift */,
 				A046D5A62AA7F10A00E6764C /* TouristAddView.swift */,
 				A05443082AAB8187002F6FC2 /* TouristDataView.swift */,
 				A046D5AD2AA8037800E6764C /* SimpleTouristsDataView.swift */,
@@ -325,7 +330,6 @@
 				A0D5D10B2AA3380700939E19 /* FacilitiesButtons.swift in Sources */,
 				A0D5D11E2AA40B7F00939E19 /* RoomTableCell.swift in Sources */,
 				A0D5D1092AA3273100939E19 /* CollectionViewCell.swift in Sources */,
-				A0D5D1292AA6409800939E19 /* ClientInfoView.swift in Sources */,
 				A0D5D1032AA2396600939E19 /* PictureCarouselView.swift in Sources */,
 				A046D5AC2AA7FE7100E6764C /* TouristsViewModel.swift in Sources */,
 				A0D5D1162AA3AD1200939E19 /* PeculiaritiesView.swift in Sources */,

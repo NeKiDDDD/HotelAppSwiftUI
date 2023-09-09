@@ -26,12 +26,10 @@ struct TouristAddView: View {
                         .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5 ))
                 }.background(Color.blue)
                     .cornerRadius(5)
-                }
-                
-                
+            }
         }.padding()
-        }
     }
+}
 
 struct TouristAddView_Previews: PreviewProvider {
     static var previews: some View {

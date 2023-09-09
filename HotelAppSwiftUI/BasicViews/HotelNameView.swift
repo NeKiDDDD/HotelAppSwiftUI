@@ -18,7 +18,7 @@ struct HotelNameView: View {
                     .multilineTextAlignment(.center)
                     .bold()
                     .font(.system(size: 20))
-
+                
             } else {
                 Text("???")
             }

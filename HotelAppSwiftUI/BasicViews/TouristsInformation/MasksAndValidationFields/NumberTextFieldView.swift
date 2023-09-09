@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NumberTextFieldView: View {
- 
+    
     @Binding var isPhoneNumberFilled: Bool
     @State private var selectedCountry = "Russia"
     @ObservedObject var modelView = PhoneNumberViewModel()
@@ -44,13 +44,13 @@ struct NumberTextFieldView: View {
     var body: some View {
         VStack {
             HStack {
-                            Text("Номер телефона")
-                                .font(.system(size: 14))
-                                .foregroundColor(.gray)
-                                .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 5))
-                                .cornerRadius(8)
-                            Spacer()
-                        }
+                Text("Номер телефона")
+                    .font(.system(size: 14))
+                    .foregroundColor(.gray)
+                    .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 5))
+                    .cornerRadius(8)
+                Spacer()
+            }
             HStack {
                 TextField(example, text: $modelView.phoneNumber, onEditingChanged: { begin in })
                     .font(.system(size: 14))
@@ -73,7 +73,7 @@ struct NumberTextFieldView: View {
                             }
                             isPhoneNumberFilled = !modelView.phoneNumber.isEmpty
                         }
-                }
+                    }
             }
         }.padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
     }
@@ -98,8 +98,8 @@ func phoneNumberFormats() -> [String: PhoneNumberFormat] {
         "Russia": PhoneNumberFormat(leadingDigits: "+7", format: "+X (XXX) XXX-XX-XX", textFieldMaxChar: 11)
         
     ]
-return formats
-    }
+    return formats
+}
 
 
 

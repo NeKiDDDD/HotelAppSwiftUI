@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookingView: View {
-
+    
     @State private var showAlert = false
     @State private var isPhoneNumberFilled = false
     @State private var isEmailFilled = false
@@ -37,7 +37,7 @@ struct BookingView: View {
                     NumberTextFieldView(isPhoneNumberFilled: $isPhoneNumberFilled, example: "+7 (XXX) XXX-XX-XX")
                     EmailTextFieldView(isEmailFilled: $isEmailFilled, prevText: "example@mail.com")
                         .background(Color.white)
-                            .cornerRadius(20)
+                        .cornerRadius(20)
                     Text(K.BookingView.disclamer).foregroundColor(.gray)
                         .font(.system(size: 14))
                         .padding(EdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5))
@@ -48,12 +48,12 @@ struct BookingView: View {
                         ForEach(0..<touristViewModel.numberOfTourists, id: \.self) { index in
                             SimpleTouristsDataView(touristNumber: index + 1, isExpanded: $touristViewModel.isExpanded[index], toggleExpansion: touristViewModel.toggleExpansion, checkDataModel: checkDataModel)
                         }
-                                .background(Color.white)
-                            .cornerRadius(20)
+                        .background(Color.white)
+                        .cornerRadius(20)
                     }
                     HStack {
                         TouristAddView(viewModel: touristViewModel)
-                                .background(Color.white)
+                            .background(Color.white)
                             .cornerRadius(20)
                     }
                     
@@ -67,17 +67,17 @@ struct BookingView: View {
                         Spacer()
                         Button(action: {
                             if isPhoneNumberFilled && isEmailFilled && checkDataModel.isSignUpComplete {
-                                    coordinator.goFinal()
-                                } else {
-                                    showAlert = true
-                                    print(isEmailFilled)
-                                    print(checkDataModel.isSignUpComplete)
-                                }
+                                coordinator.goFinal()
+                            } else {
+                                showAlert = true
+                                print(isEmailFilled)
+                                print(checkDataModel.isSignUpComplete)
+                            }
                         })
                         {
                             Text(("Оплатить " + String(networking.bookingData?.finalPrice ?? "")))
-                                    .foregroundColor(.white)
-                                    .padding()
+                                .foregroundColor(.white)
+                                .padding()
                         }.contentShape(Rectangle())
                             .alert(isPresented: $showAlert) {
                                 Alert(
@@ -88,12 +88,12 @@ struct BookingView: View {
                                     })
                                 )
                             }
-
+                        
                         Spacer()
                     }
                     .background(Color.blue)
-                        .cornerRadius(20)
-                        .padding()
+                    .cornerRadius(20)
+                    .padding()
                 }.background(Color.white)
                     .cornerRadius(20)
             }.navigationTitle(K.BookingView.screenName)
@@ -108,7 +108,7 @@ struct BookingView: View {
 struct BookingView_Previews: PreviewProvider {
     @State static var coordinator = Coordinator()
     static var previews: some View {
-       NavigationStack {
+        NavigationStack {
             BookingView()
                 .environmentObject(coordinator)
         }

@@ -27,10 +27,10 @@ struct SimpleTouristsDataView: View {
                     }
                 }) {
                     ZStack {
-                            Image(systemName: isExpanded ? "chevron.compact.up" : "chevron.compact.down")
-                                .foregroundColor(.white)
-                                .bold()
-                                .padding(EdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5 ))
+                        Image(systemName: isExpanded ? "chevron.compact.up" : "chevron.compact.down")
+                            .foregroundColor(.white)
+                            .bold()
+                            .padding(EdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5 ))
                         
                     }.background(Color.blue)
                         .cornerRadius(5)
@@ -49,6 +49,6 @@ struct SimpleTouristsDataView: View {
 
 //struct SimpleTouristsDataView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        SimpleTouristsDataView(touristNumber: 2, isExpanded: [true], toggleExpansion: 2)
+//        SimpleTouristsDataView(touristNumber: 2, isExpanded: [true], toggleExpansion: 2, checkDataModel: CheckDataModel())
 //    }
 //}

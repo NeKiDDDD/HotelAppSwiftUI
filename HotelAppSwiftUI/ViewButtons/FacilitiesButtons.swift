@@ -31,7 +31,7 @@ struct FacilitiesButtons: View {
                 .padding()
                 Divider()
                 Button(action: {
-              }) {
+                }) {
                     HStack {
                         Image(systemName: "face.smiling")
                         VStack {

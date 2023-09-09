@@ -16,7 +16,7 @@ struct RoomTableCell: View {
     let priceForIt: String?
     let buttonText: String
     @EnvironmentObject var coordinator: Coordinator
-
+    
     
     var body: some View {
         ZStack {
@@ -45,8 +45,6 @@ struct RoomTableCell: View {
                         VStack {
                             PriceView(minimalPrice: minimalPrice, priceForIt: priceForIt)
                         }
-                        
-                        //                        .padding()
                     }
                 }
                 Section {
@@ -56,8 +54,8 @@ struct RoomTableCell: View {
                             coordinator.goBook()
                         }) {
                             Text(K.RoomNumberView.buttonChoose)
-                                    .foregroundColor(.white)
-                                    .padding()
+                                .foregroundColor(.white)
+                                .padding()
                         }.contentShape(Rectangle())
                         Spacer()
                     }.background(Color.blue)

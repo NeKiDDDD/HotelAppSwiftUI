@@ -53,16 +53,16 @@ struct K {
             static var touristBool = [true, false]
         }
     }
+    
+    struct CompletedView {
+        static let inWork = "Ваш заказ принят в работу"
+        static let approvingOrder = "Подтверждение заказа #\(K.CompletedView.orderNumber) может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление."
+        static let buttonName = "Супер"
+        static let screenName = "Заказ оплачен"
         
-        struct CompletedView {
-            static let inWork = "Ваш заказ принят в работу"
-            static let approvingOrder = "Подтверждение заказа #\(K.CompletedView.orderNumber) может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление."
-            static let buttonName = "Супер"
-            static let screenName = "Заказ оплачен"
-            
-           static var orderNumber: Int {
-                Int.random(in: 1...999999)
-            }
+        static var orderNumber: Int {
+            Int.random(in: 1...999999)
         }
-        
     }
+    
+}

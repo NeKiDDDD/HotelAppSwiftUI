@@ -32,14 +32,14 @@ struct CompletedView: View {
                         coordinator.goHome()
                     }) {
                         Text(K.CompletedView.buttonName)
-                                .foregroundColor(.white)
-                                .padding()
+                            .foregroundColor(.white)
+                            .padding()
                     }.contentShape(Rectangle())
                     Spacer()
                 }.background(Color.blue)
                     .cornerRadius(20)
                     .padding()
-
+                
             }
         }
     }

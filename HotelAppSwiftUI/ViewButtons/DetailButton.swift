@@ -15,7 +15,6 @@ struct DetailButton: View {
                 Text("Подробнее о номере")
                     .bold()
                     .font(.system(size: 10))
-//                    .frame(width: 200, alignment: .leading)
                 Image(systemName: "arrow.right")
             }.foregroundColor(.blue)
                 .frame(alignment: .leading)
